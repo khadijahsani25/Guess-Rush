@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+    <script src="game.js" defer></script>
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #fde7f3,
+        #ede9fe
+    );
+
+    color: #2d1b3d;
+}
+
+.navbar {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #803ef3;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.game {
+    min-height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.game-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.game-card h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.instruction {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.chances {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.chance-text {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+#number {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 14px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    background: #faf5ff;
+    color: #2a1939;
+}
+
+#number:focus {
+    border-color: #a855f7;
+    background: white;
+}
+
+#submit {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #ec4899
+    );
+
+    color: white;
+    box-shadow: 0 8px 18px rgba(168, 85, 247, 0.25);
+}
+
+#submit:active {
+    transform: scale(0.97);
+}
+
+#comment {
+    min-height: 25px;
+    margin-top: 18px;
+}
+
+#reset {
+    display: none;
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #2d1b3d;
+    color: white;
+}
+
+#reset:active {
+    transform: scale(0.97);
+}
+
+</style>
+<body>
+    <nav class="navbar">
+
+        <div class="logo">
+            🎯 GuessRush
+        </div>
+    
+        <div class="nav-actions">
+            <button class="nav-button" id="settings">
+                ⚙️
+            </button>
+    
+        </div>
+    </nav>
+    <main class="game">
+
+        <section class="game-card">
+    
+            <h2>Guess the Number!</h2>
+            <p class="instruction">
+                I'm thinking of a number between 1 and 10
+            </p>
+    
+            <div class="chances">
+                <span id="heart1">❤️</span>
+                <span id="heart2">❤️</span>
+                <span id="heart3">❤️</span>
+            </div>
+    
+            <p class="chance-text" id="chanceText">
+                3 chances left
+            </p>
+    
+            <input  id="number"  placeholder="Enter your guess" >
+    
+            <button id="submit">
+                GUESS
+            </button>
+    
+            <h3 id="comment"></h3>
+    
+            <button id="reset">
+                PLAY AGAIN
+            </button>   
+        </section> 
+    </main>
+</body>
+</html>
